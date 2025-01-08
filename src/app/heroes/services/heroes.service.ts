@@ -8,10 +8,10 @@ import { environments } from '../../../environments/environments';
 export class HeroesService {
   constructor(private http: HttpClient) { }
 
-  // creamos una propiedad para poder usar la variable de entorno
+  // creamos una propiedad para poder usar la variable de entorno que contiene la URL
   private baseUrl: string = environments.baseUrl;
 
-  // endpoint http
+  // endpoint http; realiza una solicitud GET a la URL
   getHeroes():Observable<HeroI[]> {
 
     return this.http.get<HeroI[]>(`${ this.baseUrl }/heroes`);
